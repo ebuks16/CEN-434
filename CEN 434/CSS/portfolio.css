@@ -1,0 +1,67 @@
+/* Portfolio styles - polished and presentable */
+:root{
+  --bg:#f5fbff;
+  --card:#ffffff;
+  --muted:#61728a;
+  --accent:#1557ff;
+  --accent-2:#6ee7b7;
+  --radius:14px;
+  --container:1100px;
+  --gap:20px;
+  --shadow:0 12px 36px rgba(16,24,40,0.08);
+  --glass: rgba(255,255,255,0.6);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;padding:28px;background:linear-gradient(180deg,#f8fbff,#eef6ff);font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial}
+.container{max-width:var(--container);margin:0 auto}
+
+/* Header */
+.site-header{background:transparent;padding:10px 0 18px 0}
+.brand h1{margin:0;font-size:22px}
+.brand .sub{margin:4px 0 0 0;color:var(--muted);font-size:13px}
+.main-nav a{color:var(--muted);text-decoration:none;margin-left:16px;padding:8px 10px;border-radius:8px}
+.main-nav a.active, .main-nav a:hover{background:rgba(21,87,255,0.08);color:var(--accent)}
+
+/* Hero */
+.hero{display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;padding:28px;background:linear-gradient(180deg,rgba(255,255,255,0.7),rgba(255,255,255,0.5));border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid rgba(14,30,60,0.04)}
+.profile{width:170px;height:170px;border-radius:50%;object-fit:cover;border:8px solid var(--glass);box-shadow:0 12px 30px rgba(16,24,40,0.12)}
+.hero-text h2{margin:0;font-size:24px}
+.hero-text p{color:var(--muted);max-width:820px;margin:8px auto 0}
+.cta-row{display:flex;gap:12px;justify-content:center;margin-top:12px}
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;background:var(--accent);color:white;text-decoration:none;font-weight:600}
+.btn.ghost{background:transparent;border:1px solid rgba(21,87,255,0.12);color:var(--accent)}
+
+/* Projects */
+.projects{margin-top:22px}
+.grid{display:grid;grid-template-columns:1fr;gap:14px}
+.card{background:var(--card);padding:16px;border-radius:12px;box-shadow:var(--shadow);border:1px solid rgba(14,30,60,0.04)}
+.card h4{margin:0 0 6px 0;color:#06206a}
+.card p{margin:0 0 12px 0;color:var(--muted)}
+.card-link{text-decoration:none;color:var(--accent);font-weight:600}
+
+/* Skills & badges */
+.skills{margin-top:22px}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.badge{background:rgba(21,87,255,0.08);color:var(--accent);padding:8px 10px;border-radius:999px;font-weight:600}
+
+/* Hobbies section */
+.hobbies{margin-top:18px}
+.hobbies-list{display:flex;flex-wrap:wrap;gap:12px}
+.hobby{background:linear-gradient(90deg,rgba(96,165,250,0.06),rgba(110,231,183,0.04));padding:10px 12px;border-radius:999px;color:#0c274a;font-weight:600}
+
+.about-cta{margin:22px 0;padding:14px;background:linear-gradient(90deg,rgba(21,87,255,0.04),rgba(96,165,250,0.03));border-radius:10px;text-align:center}
+
+.site-footer{margin-top:26px;color:var(--muted);font-size:14px;text-align:center}
+
+/* Responsive adjustments */
+@media(min-width:900px){
+  .hero{flex-direction:row;align-items:center;text-align:left;padding:36px;gap:28px}
+  .hero-text{flex:1}
+  .grid{grid-template-columns:repeat(3,1fr)}
+}
+
+.card:hover{transform:translateY(-6px);transition:transform .22s ease;box-shadow:0 24px 50px rgba(16,24,40,0.12)}
+
+/* small utilities */
+.kicker{font-size:12px;color:var(--accent);font-weight:700}
+a{transition:all .18s ease}

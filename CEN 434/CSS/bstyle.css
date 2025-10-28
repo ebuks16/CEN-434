@@ -1,0 +1,85 @@
+/* Modern Blog Stylesheet - bstyle.css
+	 Responsive, clean, card-based blog layout
+*/
+:root{
+	--bg:#f6fbff;
+	--surface:#ffffff;
+	--muted:#64748b;
+	--text:#0b1b2b;
+	--accent:#0b61ff;
+	--accent-2:#6ee7b7;
+	--radius:14px;
+	--container:1000px;
+	--gap:20px;
+	--shadow: 0 12px 30px rgba(9,20,36,0.06);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0;
+	font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	background:var(--bg);
+	color:var(--text);
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	padding:36px 18px;
+}
+
+.container{max-width:var(--container);margin:0 auto}
+
+header{
+	text-align:center;
+	padding:28px 18px;
+	background:linear-gradient(180deg, rgba(11,97,255,0.06), transparent);
+	border-radius:calc(var(--radius) - 6px);
+	box-shadow:var(--shadow);
+	border:1px solid rgba(11,97,255,0.06);
+}
+header h1{margin:0;font-size:28px;letter-spacing:0.2px}
+.highlight{color:var(--accent);font-weight:700}
+header p{margin:8px 0 12px 0;color:var(--muted)}
+nav{display:flex;gap:12px;justify-content:center}
+nav a{color:var(--accent);text-decoration:none;padding:8px 12px;border-radius:8px;background:transparent}
+nav a:hover{background:rgba(11,97,255,0.06);transform:translateY(-3px)}
+
+.blog-section{display:grid;grid-template-columns:1fr;gap:var(--gap);margin-top:24px}
+
+.post{background:var(--surface);padding:20px;border-radius:12px;border:1px solid rgba(9,27,48,0.04);box-shadow:0 10px 30px rgba(9,20,36,0.04);transition:transform .18s ease,box-shadow .18s ease}
+.post:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(9,20,36,0.06)}
+.post h2{margin:0 0 8px 0;font-size:20px}
+.post .date{color:var(--muted);font-size:13px;margin-bottom:12px}
+.post p{line-height:1.7;color:rgba(11,27,43,0.88)}
+.read-more{display:inline-block;margin-top:12px;color:var(--surface);background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;box-shadow:0 10px 30px rgba(11,97,255,0.08)}
+.read-more:hover{transform:translateY(-4px)}
+
+footer{margin-top:26px;text-align:center;color:var(--muted)}
+
+/* Wider layouts: two/three columns */
+@media(min-width:760px){
+	.blog-section{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:1100px){
+	.blog-section{grid-template-columns:repeat(3,1fr)}
+	header h1{font-size:34px}
+}
+
+/* small helper classes */
+.kicker{font-size:12px;color:var(--accent);font-weight:700}
+.badge{display:inline-block;padding:6px 8px;background:rgba(11,97,255,0.06);border-radius:8px;color:var(--muted);font-size:12px}
+
+/* accessibility */
+:focus{outline:3px solid rgba(11,97,255,0.12);outline-offset:3px}
+
+/* Optional hero image style if you add one later */
+.hero-img{width:96px;height:96px;border-radius:14px;object-fit:cover;display:block;margin:0 auto 14px auto}
+
+/* small print for dates */
+.date small{color:var(--muted);font-size:12px}
+
+/* Make links inside posts stand out */
+.post a{color:var(--accent);text-decoration:underline}
+
+/* Utility container to align inner content consistently */
+.content-wrap{max-width:var(--container);margin:0 auto}
+
